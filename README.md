@@ -66,6 +66,32 @@ Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/
 }
 ```
 
+### Claude Code
+
+Add to your Claude Code configuration:
+
+```bash
+claude mcp add -s user caffeinate -- npx -y @upamune/caffeinate-mcp
+```
+
+### Cursor
+
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=caffeinate&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkB1cGFtdW5lL2NhZmZlaW5hdGUtbWNwIl19)
+
+Or add to your Cursor configuration:
+
+```json
+{
+  "caffeinate": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@upamune/caffeinate-mcp"
+    ]
+  }
+}
+```
+
 ## Development
 
 ### Setup
