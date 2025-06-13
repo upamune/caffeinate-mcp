@@ -1,11 +1,11 @@
 {
   "name": "@upamune/caffeinate-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for macOS caffeinate command",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "caffeinate-mcp": "dist/index.js"
+    "caffeinate-mcp": "bin/caffeinate-mcp.cjs"
   },
   "scripts": {
     "build": "tsc",
@@ -48,6 +48,7 @@
   },
   "files": [
     "dist",
+    "bin",
     "README.md",
     "LICENSE"
   ],
