@@ -8,23 +8,19 @@ caffeinate-mcp is a server that allows you to control the macOS caffeinate comma
 
 ## Installation
 
-### Using Go
+### Using npx
 
 ```bash
-go install github.com/upamune/caffeinate-mcp@latest
+npx -y @upamune/caffeinate-mcp
 ```
 
-### Download Binary
+### Using npm
 
-Download the latest binary from the [releases page](https://github.com/upamune/caffeinate-mcp/releases).
+```bash
+npm install -g @upamune/caffeinate-mcp
+```
 
 ## Usage
-
-### Starting the Server
-
-```bash
-caffeinate-mcp
-```
 
 ### Available Tools
 
@@ -38,8 +34,8 @@ Parameters:
 - `disk` (boolean): Prevent the disk from idle sleeping (-m flag)
 - `system` (boolean): Prevent the system from sleeping when on AC power (-s flag)
 - `user` (boolean): Declare that user is active (-u flag)
-- `timeout` (integer): Timeout value in seconds (-t flag)
-- `pid` (integer): Wait for the process with specified PID to exit (-w flag)
+- `timeout` (number): Timeout value in seconds (-t flag)
+- `pid` (number): Wait for the process with specified PID to exit (-w flag)
 
 #### `caffeinate_stop`
 
@@ -54,12 +50,16 @@ List active caffeinate processes.
 
 ## MCP Client Configuration
 
+### Claude Desktop
+
+Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
 ```json
 {
   "mcpServers": {
     "caffeinate": {
-      "command": "caffeinate-mcp",
-      "args": [],
+      "command": "npx",
+      "args": ["-y", "@upamune/caffeinate-mcp"],
       "env": {}
     }
   }
@@ -68,28 +68,34 @@ List active caffeinate processes.
 
 ## Development
 
+### Setup
+
+```bash
+npm install
+```
+
 ### Building
 
 ```bash
-make build
+npm run build
 ```
 
 ### Testing
 
 ```bash
-make test
+npm test
 ```
 
-### Create a Snapshot Release
+### Linting
 
 ```bash
-make release-snapshot
+npm run lint
 ```
 
-### Available Make Targets
+### Type Checking
 
 ```bash
-make help    # Show all available targets
+npm run typecheck
 ```
 
 ## License
